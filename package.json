@@ -38,7 +38,9 @@
     "eslint-plugin-promise": "^5.1.0",
     "husky": "^7.0.2",
     "koa": "^2.13.3",
+    "mocha": "^9.1.2",
     "prettier": "^2.4.1",
+    "supertest": "^6.1.6",
     "validate-commit-msg": "^2.14.0"
   }
 }

@@ -7,6 +7,4 @@ const defaultConfig = require('./default');
  * @param {*} options - customized config
  * @returns merged config
  */
-module.exports = (options) => {
-  return _.defaultsDeep(options, defaultConfig);
-};
+module.exports = (options) => _.defaultsDeep(options, defaultConfig);

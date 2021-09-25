@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require('fs');
 const path = require('path');
 
 /**
@@ -10,12 +10,12 @@ const path = require('path');
  */
 const loadRoute = (folder, config, router, base = '') => {
   router.base = '';
-  const { stdout, stderr } = config;
+  const { stderr } = config;
 
   fs.readdir(folder, (err, files) => {
     if (err) {
       stderr(err);
-      return null;
+      return;
     }
 
     files.forEach((file) => {
@@ -28,12 +28,12 @@ const loadRoute = (folder, config, router, base = '') => {
       }
 
       if (fileStat.isFile()) {
-        const fileName = file.split(".").slice(0, -1).join(".");
+        const fileName = file.split('.').slice(0, -1).join('.');
         try {
           if (base === '') {
-            router.base = "/" + [config.prefix, fileName].join("/");
+            router.base = `/${[config.prefix, fileName].join('/')}`;
           } else {
-            router.base = "/" + [config.prefix, base, fileName].join("/");
+            router.base = `/${[config.prefix, base, fileName].join('/')}`;
           }
           require(path.join(folder, file))(router);
         } catch (err) {
@@ -42,6 +42,6 @@ const loadRoute = (folder, config, router, base = '') => {
       }
     });
   });
-}
+};
 
 module.exports = loadRoute;

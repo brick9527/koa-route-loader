@@ -1,7 +1,7 @@
-const path = require("path");
+const path = require('path');
 
-const getConfig = require("./libs/get_config");
-const methodDecorator = require("./libs/method_decorator");
+const getConfig = require('./libs/get_config');
+const methodDecorator = require('./libs/method_decorator');
 const loadRoute = require('./libs/load_route');
 
 /**

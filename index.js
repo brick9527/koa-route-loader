@@ -1,17 +1,20 @@
-const Koa = require('koa');
-const app = new Koa();
-const koaRouteLoader = require('../../index');
-const Router = require('@koa/router');
+const path = require("path");
 
-const test = require('./routes/test');
+const getConfig = require("./libs/get_config");
+const methodDecorator = require("./libs/method_decorator");
+const loadRoute = require('./libs/load_route');
 
-const router = new Router();
-
-koaRouteLoader(app, router);
-
-// test(router);
-
-// app.use(router.routes());
-
-
-app.listen(3000);
+/**
+ * Load route automatically
+ * @param {*} app - Koa app instance
+ * @param {*} router - koa-router instance
+ * @param {*} options - customized options
+ */
+module.exports = (app, router, options = {}) => {
+  const projectBaseDir = process.cwd();
+  const config = getConfig(options);
+  const routeBaseDir = path.join(projectBaseDir, config.entryPoint);
+  router = methodDecorator(router, config);
+  loadRoute(routeBaseDir, config, router);
+  app.use(router.routes());
+};

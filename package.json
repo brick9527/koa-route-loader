@@ -1,14 +1,34 @@
 {
-  "name": "koa_sample",
+  "name": "koa-route-loader",
   "version": "0.0.1",
-  "description": "",
+  "description": "An automatic route loader with Koa",
   "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brick9527/koa-route-loader.git"
+  },
+  "keywords": [
+    "Koa",
+    "route",
+    "loader"
+  ],
   "author": "brick9527 <brick9527@foxmail.com>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brick9527/koa-route-loader/issues"
+  },
+  "homepage": "https://github.com/brick9527/koa-route-loader#readme",
   "dependencies": {
-    "koa": "^2.13.2"
+    "@koa/router": "^10.1.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "koa": "^2.13.3"
   }
 }

@@ -8,7 +8,7 @@ const path = require('path');
  * @param {*} router - koa router instance
  * @param {*} base - the base of current route path
  */
-module.exports = (folder, config, router, base = '') => {
+const loadRoute = (folder, config, router, base = '') => {
   router.base = '';
   const { stdout, stderr } = config;
 
@@ -43,3 +43,5 @@ module.exports = (folder, config, router, base = '') => {
     });
   });
 }
+
+module.exports = loadRoute;

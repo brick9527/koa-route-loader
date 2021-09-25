@@ -1,0 +1,18 @@
+const koa = require('koa');
+const Router = require('@koa/router');
+
+const koaRouteLoader = require('../../index');
+
+const app = new koa();
+const router = new Router();
+
+koaRouteLoader(app, router);
+
+app.listen(3000, err => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  console.log('server is running at port 3000');
+})

@@ -6,9 +6,11 @@ const koaRouteLoader = require('../../index');
 const app = new Koa();
 const router = new Router();
 
-koaRouteLoader(app, router);
+koaRouteLoader(app, router, {
+  entryPoint: 'examples/koa_sample/routes',
+});
 
-app.listen(3000, (err) => {
+module.exports = app.listen(3000, (err) => {
   if (err) {
     console.error(err);
     return;
@@ -16,5 +18,3 @@ app.listen(3000, (err) => {
 
   console.log('server is running at port 3000');
 });
-
-module.exports = app;

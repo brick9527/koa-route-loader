@@ -9,7 +9,7 @@ const requester = chai.request(app).keepOpen();
 const { expect } = chai;
 
 describe('test server', () => {
-  it('run server', () => {
+  it('/api/test/index', () => {
     requester.get('/api/test/index').end((err, res) => {
       expect(err).to.be.null;
       expect(res).to.have.status(200);

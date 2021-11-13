@@ -1,5 +1,3 @@
-const path = require('path');
-
 const getConfig = require('./libs/get_config');
 const methodDecorator = require('./libs/method_decorator');
 const loadRoute = require('./libs/load_route');
@@ -11,10 +9,8 @@ const loadRoute = require('./libs/load_route');
  * @param {*} options - customized options
  */
 module.exports = (app, router, options = {}) => {
-  const projectBaseDir = process.cwd();
   const config = getConfig(options);
-  const routeBaseDir = path.join(projectBaseDir, config.entryPoint);
   router = methodDecorator(router, config);
-  loadRoute(routeBaseDir, config, router);
+  loadRoute(config.entryPoint, config, router);
   app.use(router.routes());
 };

@@ -7,8 +7,9 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --file test/**/*.spec.js",
-    "lint": "./node_modules/.bin/eslint index.js libs/*.js",
+    "test": "mocha test/**/*.spec.js --exit",
+    "test:cover": "nyc npm run test",
+    "lint": "eslint index.js libs/*.js",
     "commitmsg": "validate-commit-msg"
   },
   "repository": {
@@ -41,6 +42,7 @@
     "husky": "^7.0.2",
     "koa": "^2.13.3",
     "mocha": "^9.1.2",
+    "nyc": "^15.1.0",
     "prettier": "^2.4.1",
     "validate-commit-msg": "^2.14.0"
   }

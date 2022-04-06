@@ -11,6 +11,6 @@ const loadRoute = require('./libs/load_route');
 module.exports = (app, router, options = {}) => {
   const config = getConfig(options);
   router = methodDecorator(router, config);
-  loadRoute(config.entryPoint, config, router);
-  app.use(router.routes());
+  const myRouter = loadRoute(config.entryPoint, config, router);
+  app.use(myRouter.routes());
 };

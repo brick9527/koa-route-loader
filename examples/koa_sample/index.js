@@ -9,11 +9,10 @@ const router = new Router();
 
 koaRouteLoader(app, router, {
   entryPoint: path.join(__dirname, 'routes'),
+  debug: true,
 });
 
-console.log(require.main === module);
-
-module.exports = app.listen(3000, (err) => {
+const myApp = app.listen(3000, (err) => {
   if (err) {
     console.error(err);
     return;
@@ -21,3 +20,7 @@ module.exports = app.listen(3000, (err) => {
 
   console.log('server is running at port 3000');
 });
+
+if (require.main !== module) {
+  module.exports = myApp;
+}

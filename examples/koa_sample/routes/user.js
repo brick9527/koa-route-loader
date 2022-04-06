@@ -1,5 +1,5 @@
 module.exports = (router) => {
-  router.get('/login', (ctx) => {
+  router.post('/login', (ctx) => {
     ctx.body = 'hello user-login';
   });
 };

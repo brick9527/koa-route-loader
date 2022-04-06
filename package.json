@@ -9,7 +9,7 @@
   "scripts": {
     "test": "mocha test/**/*.spec.js --exit",
     "test:cover": "nyc --exclude=test --report-dir=./.coverage --reporter=html --reporter=text npm run test",
-    "lint": "eslint index.js libs/*.js",
+    "lint": "eslint index.js libs/*.js --cache",
     "commitmsg": "validate-commit-msg"
   },
   "repository": {

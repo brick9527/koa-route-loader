@@ -64,9 +64,11 @@ app.listen(3000);
 
 
 ## 待做(TODO)
-
-- [x] 添加测试覆盖率
-- [x] 完善测试用例
-- [x] 完善README.md文档
-- [ ] 发布`0.1.0`版本
-- [ ] 添加github action
+- 0.0.1
+  - [x] 添加测试覆盖率
+  - [x] 完善测试用例
+  - [x] 完善README.md文档
+  - [x] 发布`0.1.0`版本
+- 0.0.2
+  - [ ] 移除koa-router的开发依赖
+  - [ ] 添加github action

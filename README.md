@@ -1,5 +1,7 @@
 # koa-route-loader
 
+An automatic route loader with Koa2.
+
 ## 开发环境
 
 建议开发环境:

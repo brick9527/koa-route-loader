@@ -1,7 +1,7 @@
 {
   "name": "koa-route-loader",
   "version": "0.0.1",
-  "description": "An automatic route loader with Koa",
+  "description": "An automatic route loader with Koa2",
   "main": "index.js",
   "directories": {
     "example": "examples"
